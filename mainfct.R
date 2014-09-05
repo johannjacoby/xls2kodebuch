@@ -1,13 +1,10 @@
-####huuuuuuuuuuuuuuuuuuuuuuuuu
+
 #save excel sheet as "unicode text" or "Text (MS-DOS)" with extension *.txt
 # enter directory and filename bnelow and then source this script or highlight everything and run.
 # the result will be a file with the name <filename.kodebuch> in the original folder.
 
 # directory <- "C:/Dropbox/current/work/DATA STORAGE/kodebuchsys/makeFromXls" #directory in which the excel sheet resides
 # filename <- "bsp.txt" #name of the txt file
-
-
-
 
 makeKodebuch <- function(dir=".", filename=NULL, showLog=TRUE) {
   ################################################
@@ -21,6 +18,8 @@ makeKodebuch <- function(dir=".", filename=NULL, showLog=TRUE) {
     legalvalueslist <- lapply(strsplit(parts[6], split=";")[[1]], function(x) strsplit(x,split="=")[[1]])
     missingvalueslist <- lapply(strsplit(parts[7], split=";")[[1]], function(x) strsplit(x,split="=")[[1]])	
     
+  	if ()
+  	
     newVar <- list(
       varname=toupper(parts[1])
       , varlabel=gsub("^[[:blank:]]*", "", gsub("[[:blank:]]*$", "", parts[2]))
@@ -54,7 +53,7 @@ makeKodebuch <- function(dir=".", filename=NULL, showLog=TRUE) {
     }
     missingsLeft1 <- setdiff(unlist(lapply(i$varmissinglabels, function(x) x[1])), i$varmissing)
     if (length(missingsLeft1) > 0) { 
-      cat("\n!!! Variable ",i$varname," has labels defined for values that are not declared in the missing values. 
+      warning("\n!!! Variable ",i$varname," has labels defined for values that are not declared in the missing values. 
           The value"
           , ifelse(length(missingsLeft1)>1,"s","")," ", paste(missingsLeft1, collapse=";")," "
           , ifelse(length(missingsLeft1)>1,"are","is")," added to missing value specification. If this is undesired, please change "
