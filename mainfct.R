@@ -1,4 +1,4 @@
-#huuuuuuuuuuuuuuuuuuuuuuuuu
+####huuuuuuuuuuuuuuuuuuuuuuuuu
 #save excel sheet as "unicode text" or "Text (MS-DOS)" with extension *.txt
 # enter directory and filename bnelow and then source this script or highlight everything and run.
 # the result will be a file with the name <filename.kodebuch> in the original folder.
